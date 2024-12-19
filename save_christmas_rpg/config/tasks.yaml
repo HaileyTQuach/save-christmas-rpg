@@ -1,37 +1,51 @@
 code_task:
   description: >
-    You will create a game using python, these are the instructions:
+    You will create a text-based RPG game using Python and integrate it with a Gradio interface. 
+    The game will have the following specifications:
 
     Instructions
     ------------
     {game}
-    
+
+    Additional Requirements:
+      - Use the Gradio library to create a user-friendly web-based interface for the game.
+      - The game must accept user input (e.g., choices like "Go North" or "Talk to Elves") via a Gradio input text box.
+      - Choices are given in plain English.
+      - There must be a storytelling text box in addition to the input and output boxes to explain to users what is the situation, what choices they have.
+      - Display the game narrative and outcomes in a Gradio output text box.
+      - Ensure the game logic and story progress smoothly based on player inputs.
+
   expected_output: >
-    Your Final answer must be the full python code, only the python code and nothing else.
+    Your final answer must be the full Python code, including Gradio integration, only the Python code and nothing else.
 
 review_task:
   description: >
-    You will create a game using python, these are the instructions:
+    You are reviewing a text-based RPG game written in Python with Gradio integration, based on the instructions below.
 
     Instructions
     ------------
     {game}
 
-    Using the code you got, check for errors. Check for logic errors,
-    syntax errors, missing imports, variable declarations, mismatched brackets,
-    and security vulnerabilities.
+    Additional Requirements:
+      - Ensure Gradio is correctly implemented for user input and output.
+      - Check for syntax errors, logic errors, or broken Gradio components.
+      - Ensure the game runs without crashing and works smoothly as a Gradio web application.
+
   expected_output: >
-    Your Final answer must be the full python code, only the python code and nothing else.
+    Your final answer must be the corrected full Python code, including Gradio integration, only the Python code and nothing else.
 
 evaluate_task:
   description: >
-    You are helping create a game using python, these are the instructions:
+    You are evaluating a text-based RPG game written in Python with Gradio integration, based on the instructions below.
 
     Instructions
     ------------
     {game}
 
-    You will look over the code to insure that it is complete and
-    does the job that it is supposed to do.
+    Additional Requirements:
+      - Verify the game meets all functional requirements, including Gradio integration.
+      - Check if the user interface is intuitive and the gameplay works smoothly through the Gradio interface.
+      - Ensure that user inputs correctly drive the game forward.
+
   expected_output: >
-    Your Final answer must be the full python code, only the python code and nothing else.
+    Your final answer must be the full Python code, including Gradio integration, only the Python code and nothing else.
