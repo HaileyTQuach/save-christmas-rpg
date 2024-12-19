@@ -159,4 +159,68 @@ example3_snake: >
         The player's current score is displayed during gameplay.
         A high-score system can be implemented to keep track of the highest score achieved. """
 
- 
+example4_save_christmas: >
+  """
+    Game Overview:
+    Save Christmas is an immersive text-based RPG where you step into the role of a determined hero tasked with saving Christmas. 
+    Santa Claus has been kidnapped by the sinister and cunning villain, Krampus, who plans to ruin Christmas forever. 
+    It’s up to you to navigate treacherous lands, overcome obstacles, and outwit Krampus’s minions to rescue Santa and restore joy to the world. 
+    Time is running out, and the fate of Christmas lies in your hands.
+
+    You will explore snow-covered villages, uncover secrets in ancient libraries, solve challenging puzzles, and face off against Krampus in a climactic showdown. 
+    Each choice you make will influence the story, leading to unique paths and endings. Your bravery, wit, and resourcefulness will determine whether you succeed in saving Christmas.
+
+    Core Game Elements:
+      Player Interaction:
+        - Players interact by typing commands or choosing from available options (e.g., "Search North Pole", "Talk to Elves").
+        - Your decisions directly impact the storyline, NPC behavior, and the final outcome.
+
+      Gameplay Mechanics:
+        - Branching Narrative: Each choice opens up new paths, challenges, and consequences, making every playthrough unique.
+        - Turn-Based Actions: Strategically explore, interact with characters, collect clues, and solve puzzles in turn-based sequences.
+        - Inventory System: Collect and use items such as:
+            - Magic Snowflakes: Unlock hidden pathways or puzzles.
+            - Reindeer Food: Gain trust and assistance from Santa’s reindeer.
+            - Keys: Access locked areas, revealing secrets and clues.
+
+      Game Storyline (Detailed Steps):
+        1. Starting Point:
+           The player receives a mysterious letter revealing that Santa Claus has been kidnapped by the malevolent Krampus.
+           Choices: 'ignore', 'find sender', or 'set off on a quest'.
+
+        2. Branching Paths:
+           - If 'ignore': A series of ominous events unfold, eventually compelling the player to take action.
+           - If 'find sender': The player embarks on a journey to the North Pole, solving puzzles and gathering clues.
+           - If 'set off on a quest': The player heads directly to Krampus's fortress, facing immediate challenges.
+
+        3. Final Showdown:
+           The player navigates Krampus's icy fortress, overcoming traps and puzzles.
+           They engage in a boss battle against Krampus. Victory or failure depends on player skills, choices, and gathered items.
+
+        4. Additional Features:
+           - NPC allies offer unique abilities.
+           - Craft items like cloaks or fire torches using found resources.
+           - Day-night cycles introduce changing challenges and opportunities.
+
+        5. Conclusion:
+           - Victory: Santa is rescued, Christmas is saved, and the world celebrates.
+           - Failure: Santa remains captive, resulting in perpetual winter, and the player must start again, now better prepared.
+
+      Win/Lose Conditions:
+        - Win: Rescue Santa Claus and restore Christmas.
+        - Lose: Fail to free Santa, allowing Krampus's eternal winter to persist.
+
+      Scoring System (Optional):
+        - Earn points for solving puzzles, finding hidden paths, and making optimal decisions.
+
+      Game Design Notes:
+        - Implemented in Python with a Gradio-based text interface.
+        - Player inputs through commands or numbered choices.
+        - Dynamic feedback keeps players informed of progress, inventory, and potential consequences.
+
+    Game Features Summary:
+      - Engaging, branching storyline with multiple endings.
+      - Challenging puzzles and traps requiring wit and strategy.
+      - Meaningful player choices that shape the world and outcome.
+      - A clean, text-based interface powered by Gradio for accessibility.
+  """
