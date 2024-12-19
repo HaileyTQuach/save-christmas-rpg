@@ -159,7 +159,7 @@ class Game:
             return "images/journey.png"
         elif self.state['world_state'] == 'informed':
             return "images/book-krampus.png"
-        elif self.state['world_state'] == 'ominous' or 'hesitant':
+        elif self.state['world_state'] in ['ominous', 'hesitant']:
             return "images/ominous-events.png"
         elif self.state['world_state'] == 'defeat':
             return "images/loss.png"
