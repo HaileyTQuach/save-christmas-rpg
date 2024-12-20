@@ -155,7 +155,7 @@ class Game:
         if player_choice == '1':
             return self.go_to_fortress()
         elif player_choice == '2':
-            return self.seek_final_allies()  # Corrected Method Call
+            return self.seek_final_allies()
         elif player_choice == '3':
             return self.study_book_again()
         elif player_choice.lower() == 'reset':
@@ -181,7 +181,7 @@ class Game:
         if player_choice == '1':
             return self.investigate_whispers()
         elif player_choice == '2':
-            return self.seek_final_allies()  # Corrected Method Call
+            return self.seek_final_allies()
         elif player_choice == '3':
             return self.go_to_fortress()
         elif player_choice.lower() == 'reset':
@@ -239,7 +239,7 @@ class Game:
             WorldState.VICTORY.value: "images/victory.png",
             WorldState.WELL_READ.value: "images/library.png",
             WorldState.GOT_CLOAK.value: "images/warm_cloak.png",
-            WorldState.WELL_PREPARED.value: "images/well_prepared.png",  # New Image
+            WorldState.WELL_PREPARED.value: "images/well_prepared.png",
             WorldState.ELF_SCOUT.value: "images/elf.png",
             WorldState.REINDEER.value: "images/reindeer.png",
             WorldState.BOTH_ALLIES.value: "images/both.png",
@@ -545,7 +545,6 @@ class Game:
         )
         return self.story, self.choices
 
-    # Final Showdown Method (Already Updated Above)
 
 # Initialize game instance
 game_instance = Game()
