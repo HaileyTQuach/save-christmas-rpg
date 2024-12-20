@@ -562,7 +562,7 @@ initial_story, initial_choices = game_instance.story, game_instance.choices
 initial_image = game_instance.get_current_image()
 
 # Gradio Interface
-with gr.Blocks(theme=gr.themes.Ocean()) as interface:
+with gr.Blocks(theme=gr.themes.Soft()) as interface:
     gr.Markdown("# 🎄 Save Christmas RPG 🎅")
     gr.Markdown("Help rescue Santa Claus from Krampus! Type your choices to navigate the story. Use 'reset' to restart.")
 
