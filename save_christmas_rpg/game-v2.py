@@ -246,7 +246,7 @@ class Game:
         return self.story, self.choices
 
     def wait_and_see(self):
-        self.state['world_state'] = 'hesistant'
+        self.state['world_state'] = 'hesitant'
         self.story = (
             "👀 You decide to wait and observe. The world around you grows darker, and strange silhouettes pass through the skies. 🌌🦇 "
             "A chill runs down your spine, but the tension gives you a clearer sense of the dangers ahead. ❄️⏳"
