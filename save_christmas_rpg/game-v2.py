@@ -62,7 +62,7 @@ class Game:
                 self.choices = "Invalid choice. Type '1', '2', or '3'."
                 return self.story, self.choices
         
-        elif self.state['world_state'] == 'hesistant':
+        elif self.state['world_state'] == 'hesitant':
             # The player is hesistant
             if '1' in player_choice:
                 return self.go_to_fortress()
