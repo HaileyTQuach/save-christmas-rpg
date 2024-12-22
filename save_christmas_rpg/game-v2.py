@@ -54,10 +54,21 @@ class Game:
             "2. Investigate and find the sender\n"
             "3. Prepare supplies before starting your quest"
         )
+    
+    def reset_game_output(self):
+        print("Resetting the game...")
+        self.reset_game()
+        print(f"Game state after reset: {self.state}")
+        return self.story, self.choices
 
     def start_game(self, player_choice):
-        player_choice = player_choice.strip()
+        player_choice = player_choice.strip().lower()
         print(f"Current State: {self.state['world_state']}, Player Choice: '{player_choice}'")
+
+        # **Handle 'reset' command first**
+        if player_choice == 'reset':
+            print("Reset command received.")
+            return self.reset_game_output()
 
         # If Santa is already rescued
         if self.state['santa_rescued']:
@@ -89,6 +100,7 @@ class Game:
             return self.handle_journey_state(player_choice)
         elif current_state in [WorldState.DEFEAT.value, WorldState.VICTORY.value]:
             if player_choice.lower() == 'reset':
+                print("Reset command received.")
                 return self.reset_game_output()
             else:
                 self.choices = "Type 'reset' to start over."
@@ -228,10 +240,6 @@ class Game:
         else:
             self.choices = "❌ Invalid choice. Please enter '1', '2', or '3'."
             return self.story, self.choices
-
-    def reset_game_output(self):
-        self.reset_game()
-        return self.story, self.choices
 
     # Image Mapping Method
     def get_current_image(self):
@@ -427,44 +435,6 @@ class Game:
             "1. Head to Krampus's fortress\n"
             "2. Gather even more supplies\n"
             "3. Consult the ancient book again"
-        )
-        return self.story, self.choices
-
-    def seek_final_allies(self):
-        if "Reindeer Warrior" not in self.state['team_members']:
-            self.state['team_members'].append("Reindeer Warrior")
-
-        # Update team status
-        if self.state['team_status'] == TeamStatus.ELF_SCOUT.value:
-            self.state['team_status'] = TeamStatus.BOTH.value
-            self.state['world_state'] = WorldState.BOTH_ALLIES_FINAL.value
-        else:
-            self.state['team_status'] = TeamStatus.REINDEER.value
-            self.state['world_state'] = WorldState.REINDEER.value
-        self.story = (
-            "🦌 Deep in the snowy forest, you encounter a Reindeer Warrior with antlers gleaming like ice and eyes full of determination. "
-            "Strong, swift, and loyal, they pledge to join your quest. With their strength by your side, the odds of victory grow brighter. ⚔️❄️"
-        )
-        self.choices = (
-            "1. Attempt the final showdown now\n"
-            "2. Gather more supplies\n"
-            "3. Study the ancient book"
-        )
-        return self.story, self.choices
-
-    def gather_more_supplies(self):
-        if "Healing Potion" not in self.state['resources']:
-            self.state['resources'].append("Healing Potion")
-        self.state['world_state'] = WorldState.WELL_PREPARED.value  # Update State to Well Prepared
-        self.story = (
-            "🛍️ You gather additional supplies: a Healing Potion, sturdy gloves, and a map to guide you. 🧤✨ Each preparation makes you feel more confident. "
-            "You know that every small step brings you closer to rescuing Santa. 🎅💪"
-        )
-
-        self.choices = (
-            "1. Head to Krampus's fortress\n"
-            "2. Seek out allies now that you're well-supplied\n"
-            "3. Study the ancient book before the journey"
         )
         return self.story, self.choices
 
