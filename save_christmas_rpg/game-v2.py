@@ -10,7 +10,7 @@ class WorldState(Enum):
     HESITANT = 'hesitant'
     INFORMED = 'informed'
     GOT_CLOAK = 'got_cloak'
-    WELL_PREPARED = 'well_prepared'  # New State
+    WELL_PREPARED = 'well_prepared'
     WELL_READ = 'well_read'
     ELF_SCOUT = 'elf_scout'
     REINDEER = 'reindeer'
@@ -87,7 +87,7 @@ class Game:
         elif current_state == WorldState.INFORMED.value:
             return self.handle_informed_state(player_choice)
         elif current_state == WorldState.WELL_PREPARED.value:
-            return self.handle_well_prepared_state(player_choice)  # New Handler
+            return self.handle_well_prepared_state(player_choice) 
         elif current_state == WorldState.WELL_READ.value:
             return self.handle_well_read_state(player_choice)
         elif current_state in [WorldState.GOT_CLOAK.value]:
@@ -447,7 +447,7 @@ class Game:
         )
 
         self.choices = (
-            "1. Attempt the final showdown\n"
+            "1. Go to Krampus Fortress\n"
             "2. Seek out allies (if any left)\n"
             "3. Gather any last supplies"
         )
@@ -563,6 +563,13 @@ with gr.Blocks(theme=gr.themes.Soft()) as interface:
                 type="filepath",
                 value=initial_image
             )
+
+    # **Attach a 'submit' event to the input textbox**
+    input_box.submit(
+        fn=main,
+        inputs=input_box,
+        outputs=[story_output, choices_output, input_box, image_output]
+    )
 
     # Define what happens on button click
     submit_button.click(
